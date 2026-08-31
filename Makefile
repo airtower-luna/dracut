@@ -50,6 +50,9 @@ man7pages = man/dracut.cmdline.7 \
 
 man8pages = man/dracut.8 \
             man/dracut-catimages.8 \
+            man/dracut-cpio.8 \
+            man/dracut-extractinitrd.8 \
+            man/dracut-install.8 \
             modules.d/77dracut-systemd/dracut-cmdline.service.8 \
             modules.d/77dracut-systemd/dracut-mount.service.8 \
             modules.d/77dracut-systemd/dracut-shutdown.service.8 \
