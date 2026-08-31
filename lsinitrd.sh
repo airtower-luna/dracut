@@ -37,8 +37,6 @@ usage() {
     } >&2
 }
 
-[[ $dracutbasedir ]] || dracutbasedir=/usr/lib/dracut
-
 sorted=0
 modules=0
 unset verbose
@@ -111,10 +109,10 @@ if command -v 3cpio > /dev/null; then
     unset threecpio_help_output
 fi
 if ! [[ $EXTRACTOR ]]; then
-    if [[ -f "$dracutbasedir/src/extractinitrd/extractinitrd" ]]; then
-        EXTRACTOR="$dracutbasedir/src/extractinitrd/extractinitrd"
+    if [[ -x "${BASH_SOURCE[0]%/*}/src/extractinitrd/extractinitrd" ]]; then
+        EXTRACTOR="${BASH_SOURCE[0]%/*}/src/extractinitrd/extractinitrd"
     else
-        EXTRACTOR="$dracutbasedir/extractinitrd"
+        EXTRACTOR="$(command -v dracut-extractinitrd)"
     fi
     if ! [[ -x $EXTRACTOR ]]; then
         echo

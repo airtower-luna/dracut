@@ -14,10 +14,10 @@ test_check() {
 }
 
 get_extractinitrd_cmd() {
-    if [ "$PKGLIBDIR" = "$basedir" ]; then
-        echo "${PKGLIBDIR}/src/extractinitrd/extractinitrd"
+    if [ -x "${basedir}/src/extractinitrd/extractinitrd" ]; then
+        echo "${basedir}/src/extractinitrd/extractinitrd"
     else
-        echo "${PKGLIBDIR}/extractinitrd"
+        command -v dracut-extractinitrd
     fi
 }
 

@@ -256,7 +256,7 @@ endif
 		install -m 0755 src/install/dracut-install $(DESTDIR)$(bindir)/dracut-install; \
 	fi
 	if [ -f src/extractinitrd/extractinitrd ]; then \
-		install -m 0755 src/extractinitrd/extractinitrd $(DESTDIR)$(pkglibdir)/extractinitrd; \
+		install -m 0755 src/extractinitrd/extractinitrd $(DESTDIR)$(bindir)/dracut-extractinitrd; \
 	fi
 	if [ -f dracut-util ]; then \
 		install -m 0755 dracut-util $(DESTDIR)$(pkglibdir)/dracut-util; \
