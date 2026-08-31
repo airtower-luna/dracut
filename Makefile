@@ -253,7 +253,7 @@ endif
 		$(DESTDIR)$(systemdsystemunitdir)/initrd.target.wants/dracut-initqueue.service; \
 	fi
 	if [ -f src/install/dracut-install ]; then \
-		install -m 0755 src/install/dracut-install $(DESTDIR)$(pkglibdir)/dracut-install; \
+		install -m 0755 src/install/dracut-install $(DESTDIR)$(bindir)/dracut-install; \
 	fi
 	if [ -f src/extractinitrd/extractinitrd ]; then \
 		install -m 0755 src/extractinitrd/extractinitrd $(DESTDIR)$(pkglibdir)/extractinitrd; \
